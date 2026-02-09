@@ -1,6 +1,6 @@
 import React from "react";
 import TeamGrid from "../components/team/TeamGrid.jsx";
-import { CURRENT_TEAM } from "../data/team.js";
+import { CURRENT_TEAM, VOLUNTEERS } from "../data/team.js";
 
 export default function TeamPage() {
   return (
@@ -27,6 +27,11 @@ export default function TeamPage() {
       <section>
         <h2 className="text-xl font-semibold mb-3">Current core team</h2>
         <TeamGrid team={CURRENT_TEAM} />
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-3">Volunteers</h2>
+        <TeamGrid team={VOLUNTEERS} />
       </section>
 
       <section className="rounded-2xl bg-white/80 border border-gray-100 p-4 text-sm text-gray-700">

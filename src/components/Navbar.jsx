@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const linkBase =
     "block px-3 py-2 text-sm rounded-full transition hover:text-thPurple";
-    
+
   const mobileLinkBase = "block px-4 py-3 text-base transition-colors";
 
   return (
@@ -24,7 +24,14 @@ export default function Navbar() {
       <nav className="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-thGreen via-thCyan to-thPurple" />
+          {/* Logo Image */}
+          <img
+            src="/logo.png"
+            alt="TinkerHub Logo"
+            className="w-7 h-7 object-contain"
+          />
+
+          {/* Text */}
           <span className="font-semibold text-sm sm:text-base">
             TinkerHub CEKnpy
           </span>
@@ -37,8 +44,7 @@ export default function Navbar() {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `${linkBase} ${
-                  isActive ? "text-thPurple font-medium bg-thLight" : ""
+                `${linkBase} ${isActive ? "text-thPurple font-medium bg-thLight" : ""
                 }`
               }
               end={item.to === "/"}
@@ -56,19 +62,16 @@ export default function Navbar() {
         >
           <span className="relative block w-4 h-3">
             <span
-              className={`absolute left-0 top-0 h-[2px] w-full rounded bg-thDark transition-transform duration-200 ${
-                open ? "translate-y-[6px] rotate-45" : ""
-              }`}
+              className={`absolute left-0 top-0 h-[2px] w-full rounded bg-thDark transition-transform duration-200 ${open ? "translate-y-[6px] rotate-45" : ""
+                }`}
             />
             <span
-              className={`absolute left-0 top-1.5 h-[2px] w-full rounded bg-thDark transition-opacity duration-200 ${
-                open ? "opacity-0" : "opacity-100"
-              }`}
+              className={`absolute left-0 top-1.5 h-[2px] w-full rounded bg-thDark transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"
+                }`}
             />
             <span
-              className={`absolute left-0 bottom-0 h-[2px] w-full rounded bg-thDark transition-transform duration-200 ${
-                open ? "-translate-y-[6px] -rotate-45" : ""
-              }`}
+              className={`absolute left-0 bottom-0 h-[2px] w-full rounded bg-thDark transition-transform duration-200 ${open ? "-translate-y-[6px] -rotate-45" : ""
+                }`}
             />
           </span>
         </button>
@@ -76,9 +79,8 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       <div
-        className={`sm:hidden bg-white border-t border-gray-100 transition-all duration-200 overflow-hidden ${
-          open ? 'max-h-screen' : 'max-h-0'
-        }`}
+        className={`sm:hidden bg-white border-t border-gray-100 transition-all duration-200 overflow-hidden ${open ? 'max-h-screen' : 'max-h-0'
+          }`}
       >
         <div className="px-4 py-2">
           {navItems.map((item) => (
@@ -87,8 +89,7 @@ export default function Navbar() {
               to={item.to}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-md transition-colors ${
-                  isActive ? 'text-thPurple font-medium' : ''
+                `block px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-md transition-colors ${isActive ? 'text-thPurple font-medium' : ''
                 }`
               }
               end={item.to === "/"}

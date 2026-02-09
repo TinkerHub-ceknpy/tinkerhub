@@ -2,11 +2,11 @@
 export const UPCOMING_EVENTS = [
   {
     title: "Tink-Her-Hack 4.0",
-    date: "To be announced",
+    date: "20-01-2026 to 21-02-2026",
     mode: "Offline",
     location: "CE Karunagappally",
     type: "Hackathon",
-    link: "",
+    link: "https://tink-her-hack-4-ce-karunagappally.vercel.app/",
     highlight: true,
   },
   {

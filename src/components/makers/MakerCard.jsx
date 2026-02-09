@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-export default function MakerCard({ maker }) {
+const MotionLink = motion(Link);
+
+export default function MakerCard({ maker, index = 0 }) {
   const initials = maker.name
     .split(" ")
     .map((p) => p[0])
@@ -9,9 +12,14 @@ export default function MakerCard({ maker }) {
     .slice(0, 2);
 
   return (
-    <Link
+    <MotionLink
       to={`/top-makers/${maker.slug}`}
-      className="rounded-2xl border border-gray-200 bg-white/80 p-4 hover:border-thPurple hover:shadow-md transition flex flex-col"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
+      whileHover={{ y: -5, scale: 1.02 }}
+      className="rounded-2xl border border-white/40 bg-white/30 backdrop-blur-md p-4 shadow-lg hover:bg-white/40 hover:border-white/60 transition-colors flex flex-col"
     >
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-thGreen via-thCyan to-thPurple flex items-center justify-center text-xs font-semibold text-thDark">
@@ -44,6 +52,6 @@ export default function MakerCard({ maker }) {
       <span className="mt-3 text-[11px] text-thPurple font-medium">
         View story →
       </span>
-    </Link>
+    </MotionLink>
   );
 }
