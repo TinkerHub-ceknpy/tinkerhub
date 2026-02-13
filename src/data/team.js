@@ -41,3 +41,30 @@ export const CURRENT_TEAM = [
     socials: {},
   },
 ];
+
+export const VOLUNTEERS = [
+  {
+    name: "Lekshmi Priya V S",
+    role: "Design Lead",
+    avatar: "",
+    socials: {},
+  },
+  {
+    name: "Sourav S",
+    role: "Web Lead",
+    avatar: "/Team/sourav-removebg-preview.png",
+    socials: {},
+  },
+  {
+    name: "Malavika R",
+    role: "Event Lead",
+    avatar: "",
+    socials: {},
+  },
+  {
+    name: "",
+    role: "Volunteer",
+    avatar: "",
+    socials: {},
+  },
+];

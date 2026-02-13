@@ -3,7 +3,7 @@ import React from "react";
 const defaultAnnouncements = [
   "Campus Chapter 2025–26 core team is live.",
   "Hack nights every Friday – bring your laptop.",
-  "Tink-Her-Hack 4.0 coming soon – stay tuned.",
+  "Tink-Her-Hack 4.0 Happening on 20,21 feb 2026.",
 ];
 
 export default function AnnouncementBanner({ items = defaultAnnouncements }) {

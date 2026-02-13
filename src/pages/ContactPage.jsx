@@ -1,5 +1,6 @@
 import React from "react";
 import { CONTACT_INFO } from "../data/contact.js";
+import { TiltButton } from 'react-tilt-button';
 
 export default function ContactPage() {
   const c = CONTACT_INFO;
@@ -127,36 +128,62 @@ export default function ContactPage() {
 
         <div className="rounded-2xl bg-white/80 border border-gray-100 p-4">
           <h2 className="text-lg font-semibold mb-2">Stay in the loop</h2>
-          <ul className="text-sm text-gray-700 space-y-1">
+
+          <div className="flex flex-wrap gap-4 justify-center mt-4">
+            {/* Instagram Button */}
             {c.instagram && (
-              <li>
-                Instagram:{" "}
-                <a
-                  href={c.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-thPurple hover:underline"
+              <a href={c.instagram} target="_blank" rel="noreferrer">
+                <TiltButton
+                  variant="solid"
+                  width={200}
+                  height={60}
+                  elevation={10}
+                  pressInset={5}
+                  tilt={4}
+                  radius={16}
+                  surfaceColor="#f669d3ff"
                 >
-                  @tinkerhub.ceknpy
-                </a>{" "}
-                – event posters, reels, and vibes. [web:102]
-              </li>
+                  <span className="font-semibold text-white">Instagram</span>
+                </TiltButton>
+              </a>
             )}
+
+            {/* LinkedIn Button */}
             {c.linkedin && (
-              <li>
-                LinkedIn:{" "}
-                <a
-                  href={c.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-thPurple hover:underline"
+              <a href={c.linkedin} target="_blank" rel="noreferrer">
+                <TiltButton
+                  variant="solid"
+                  width={200}
+                  height={60}
+                  elevation={10}
+                  pressInset={5}
+                  tilt={4}
+                  radius={16}
+                  surfaceColor="#3b82f6" // Light blue (Tailwind blue-500)
                 >
-                  TinkerHub CEKnpy
-                </a>{" "}
-                – announcements, achievements, and writeups. [web:13]
-              </li>
+                  <span className="font-semibold text-white">LinkedIn</span>
+                </TiltButton>
+              </a>
             )}
-          </ul>
+
+            {/* WhatsApp Button */}
+            {c.communitySpaceLink && (
+              <a href={c.communitySpaceLink} target="_blank" rel="noreferrer">
+                <TiltButton
+                  variant="solid"
+                  width={200}
+                  height={60}
+                  elevation={10}
+                  pressInset={5}
+                  tilt={4}
+                  radius={16}
+                  surfaceColor="#22c55e" // Light green (Tailwind green-500)
+                >
+                  <span className="font-semibold text-white">WhatsApp</span>
+                </TiltButton>
+              </a>
+            )}
+          </div>
         </div>
       </section>
     </div>
